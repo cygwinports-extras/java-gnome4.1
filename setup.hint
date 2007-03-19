@@ -1,0 +1,4 @@
+category: Gnome Java
+requires: cygwin classpath jamvm libiconv2 zlib glib2 gtk2-x11 libglade2
+sdesc: "Java GTK+ bindings"
+ldesc: "Java bindings for glib, gtk+, and libglade 2.x"

@@ -1,0 +1,108 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/java-gnome-4.0.2/Makefile src/java-gnome-4.0.2/Makefile
+--- origsrc/java-gnome-4.0.2/Makefile	2007-02-12 06:33:02.000000000 -0600
++++ src/java-gnome-4.0.2/Makefile	2007-03-29 18:55:29.046875000 -0500
+@@ -22,9 +22,9 @@
+ all: build-java
+ endif
+ 
+-build-java: tmp/gtk-$(APIVERSION).jar tmp/libgtkjni-$(APIVERSION).so
++build-java: tmp/gtk-$(APIVERSION).jar tmp/cyggtkjni-$(APIVERSION).dll
+ 
+-build-native: tmp/libgtkjava-$(APIVERSION).so
++build-native: tmp/cyggtkjava-$(APIVERSION).dll
+ 
+ .PHONY: test demo doc clean distlcean sleep install
+ 
+@@ -143,11 +143,11 @@
+ 	@echo "$(CC_CMD) $@"
+ 	$(CCACHE) $(CC) $(GTK_CFLAGS) -Itmp/include -o $@ -c $<
+ 
+-tmp/libgtkjni-$(APIVERSION).so: build/config build/headers $(OBJECTS_C)
++tmp/cyggtkjni-$(APIVERSION).dll: build/config build/headers $(OBJECTS_C)
+ 	@echo "$(LINK_CMD) $@"
+ 	$(LINK) \
+-		 $(GTK_LIBS) \
+-		-o $@ $(OBJECTS_C)
++		-o $@ $(OBJECTS_C) \
++		 $(GTK_LIBS)
+ #	@echo "STRIP     $@"
+ #	strip --only-keep-debug $@
+ 
+@@ -159,7 +159,7 @@
+ 		-classpath $(JAVAGNOME_JARS):src/java:tmp/classes \
+ 		-o $@ -c $<
+ 
+-tmp/libgtkjava-$(APIVERSION).so: tmp/native/gtk.o
++tmp/cyggtkjava-$(APIVERSION).dll: tmp/native/gtk.o
+ 	@echo "$(GCJ_LINK_CMD) $@"
+ 	$(GCJ_LINK) \
+ 		-Wl,-rpath=$(JAVAGNOME_HOME)/lib \
+@@ -190,10 +190,10 @@
+ 
+ install-java: build-java \
+ 	$(DESTDIR)$(PREFIX)/share/java/gtk-$(APIVERSION).jar \
+-	$(DESTDIR)$(PREFIX)/lib/libgtkjni-$(APIVERSION).so
++	$(DESTDIR)$(PREFIX)/lib/cyggtkjni-$(APIVERSION).dll
+ 
+ install-native: build-native install-java \
+-	$(DESTDIR)$(PREFIX)/lib/libgtkjava-$(APIVERSION).so
++	$(DESTDIR)$(PREFIX)/lib/cyggtkjava-$(APIVERSION).dll
+ 
+ $(DESTDIR)$(PREFIX)/share/java/gtk-$(APIVERSION).jar: tmp/gtk-$(APIVERSION).jar
+ 	@echo "INSTALL   $@"
+@@ -201,11 +201,11 @@
+ 	@echo "SYMLINK   $(@D)/gtk.jar -> gtk-$(APIVERSION).jar"
+ 	cd $(@D) && rm -f gtk.jar && ln -s gtk-$(APIVERSION).jar gtk.jar
+ 	
+-$(DESTDIR)$(PREFIX)/lib/libgtkjni-$(APIVERSION).so: tmp/libgtkjni-$(APIVERSION).so
++$(DESTDIR)$(PREFIX)/lib/cyggtkjni-$(APIVERSION).dll: tmp/cyggtkjni-$(APIVERSION).dll
+ 	@echo "INSTALL   $@"
+ 	cp -f $< $@
+ 
+-$(DESTDIR)$(PREFIX)/lib/libgtkjava-$(APIVERSION).so: tmp/libgtkjava-$(APIVERSION).so
++$(DESTDIR)$(PREFIX)/lib/cyggtkjava-$(APIVERSION).dll: tmp/cyggtkjava-$(APIVERSION).dll
+ 	@echo "INSTALL   $@"
+ 	cp -f $< $@
+ 
+@@ -229,7 +229,6 @@
+ 	$(JAVA) \
+ 		-classpath tmp/tests:tmp/gtk-$(APIVERSION).jar:$(JUNIT_JARS) \
+ 		-Djava.library.path=tmp \
+-		-ea \
+ 		UnitTests
+ 
+ demo: build-java build/classes-test
+@@ -237,7 +236,6 @@
+ 	$(JAVA) \
+ 		-classpath tmp/tests:tmp/gtk-$(APIVERSION).jar \
+ 		-Djava.library.path=tmp \
+-		-ea \
+ 		Experiment
+ 
+ # --------------------------------------------------------------------
+@@ -297,10 +295,10 @@
+ 	@echo "RM        temporary files"
+ 	rm -rf build/* tmp/classes/* tmp/include/* tmp/native/* tmp/objects/*
+ 	rm -f hs_err_*
+-	@echo "RM        built .jar and .so"
++	@echo "RM        built .jar and .dll"
+ 	rm -f tmp/gtk-*.jar \
+-		tmp/libgtkjni-*.so \
+-		tmp/libgtkjava-*.so
++		tmp/cyggtkjni-*.dll \
++		tmp/cyggtkjava-*.dll
+ 
+ distclean: clean
+ 	@echo "RM        build configuration information"
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/java-gnome-4.0.2/tests/prototype/Designer.java src/java-gnome-4.0.2/tests/prototype/Designer.java
+--- origsrc/java-gnome-4.0.2/tests/prototype/Designer.java	2007-02-12 06:33:03.000000000 -0600
++++ src/java-gnome-4.0.2/tests/prototype/Designer.java	2007-03-29 18:55:29.062500000 -0500
+@@ -33,7 +33,7 @@
+         final Window w;
+         final Label l;
+ 
+-        glade = Glade.parse("tests/prototype/simple.glade", "simple");
++        glade = Glade.parse("simple.glade", "simple");
+ 
+         l = (Label) glade.getWidget("label1");
+         System.out.println("Extracted label text: \n\"" + l.getText() + "\"");

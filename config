@@ -21,7 +21,7 @@ JAVA_CMD=JAVA
 
 GCJ=gcj @GCJFLAGS@ -fjni
 GCJ_CMD=GCJ
-GCJ_LINK=gcj -shared -Wl,--enable-auto-image-base -Wl,--out-implib,libgtkjava.dll.a -fjni
+GCJ_LINK=gcj -shared -fjni -Wl,--enable-auto-image-base -Wl,--out-implib,libgtkjava-$(APIVERSION).dll.a
 GCJ_LINK_CMD=LINK
 GCJ_LIB_PATH=
 

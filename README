@@ -1,4 +1,4 @@
-java-gnome
+java-gnome40
 ------------------------------------------
 Java bindings for glib, gtk+, and libglade 2.x.
 
@@ -33,15 +33,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack java-gnome-4.0.2-X-src.tar.bz2
+  unpack java-gnome40-4.0.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./java-gnome-4.0.2-X.cygport all
+  cygport ./java-gnome40-4.0.2-X.cygport all
 
 This will create:
-  /usr/src/java-gnome-4.0.2-X-src.tar.bz2
-  /usr/src/java-gnome-4.0.2-X.tar.bz2
+  /usr/src/java-gnome40-4.0.2-X-src.tar.bz2
+  /usr/src/java-gnome40-4.0.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -49,72 +49,72 @@ Files included in the binary package:
 
   /usr/bin/cyggtkjava-4.0.dll
   /usr/bin/cyggtkjni-4.0.dll
-  /usr/lib/libgtkjava.dll.a
-  /usr/share/doc/Cygwin/java-gnome-4.0.2.README
-  /usr/share/doc/java-gnome-4.0.2/AUTHORS
-  /usr/share/doc/java-gnome-4.0.2/HACKING
-  /usr/share/doc/java-gnome-4.0.2/LICENCE
-  /usr/share/doc/java-gnome-4.0.2/NEWS
-  /usr/share/doc/java-gnome-4.0.2/README
+  /usr/lib/libgtkjava-4.0.dll.a
+  /usr/share/doc/Cygwin/java-gnome40-4.0.2.README
+  /usr/share/doc/java-gnome40-4.0.2/AUTHORS
+  /usr/share/doc/java-gnome40-4.0.2/HACKING
+  /usr/share/doc/java-gnome40-4.0.2/LICENCE
+  /usr/share/doc/java-gnome40-4.0.2/NEWS
+  /usr/share/doc/java-gnome40-4.0.2/README
   /usr/share/java/gtk-4.0.jar
-  /usr/share/javadoc/gnome/about.html
-  /usr/share/javadoc/gnome/all-classes.html
-  /usr/share/javadoc/gnome/all-packages.html
-  /usr/share/javadoc/gnome/deprecated.html
-  /usr/share/javadoc/gnome/gjdoc.properties
-  /usr/share/javadoc/gnome/index.html
-  /usr/share/javadoc/gnome/org/gnome/gdk/Pixbuf.html
-  /usr/share/javadoc/gnome/org/gnome/gdk/classes.html
-  /usr/share/javadoc/gnome/org/gnome/gdk/package-summary.html
-  /usr/share/javadoc/gnome/org/gnome/glade/Glade.html
-  /usr/share/javadoc/gnome/org/gnome/glade/Xml.html
-  /usr/share/javadoc/gnome/org/gnome/glade/classes.html
-  /usr/share/javadoc/gnome/org/gnome/glade/package-summary.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Boxed.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Glib.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Object.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Plumbing.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Signal.html
-  /usr/share/javadoc/gnome/org/gnome/glib/Value.html
-  /usr/share/javadoc/gnome/org/gnome/glib/classes.html
-  /usr/share/javadoc/gnome/org/gnome/glib/package-summary.html
-  /usr/share/javadoc/gnome/org/gnome/gnome/Entry.html
-  /usr/share/javadoc/gnome/org/gnome/gnome/classes.html
-  /usr/share/javadoc/gnome/org/gnome/gnome/package-summary.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Bin.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Box.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Button.CLICKED.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Button.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Container.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/FileChooser.SELECTION_CHANGED.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/FileChooser.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/FileChooserAction.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/FileChooserButton.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Fixed.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Gtk.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/HBox.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Label.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Misc.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Object.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/ReliefStyle.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/TreeIter.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/VBox.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Widget.ENTER_NOTIFY_EVENT.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Widget.FOCUS_OUT_EVENT.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Widget.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Window.DELETE.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/Window.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/WindowType.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/classes.html
-  /usr/share/javadoc/gnome/org/gnome/gtk/package-summary.html
-  /usr/share/javadoc/gnome/overview-summary.html
-  /usr/share/javadoc/gnome/package-list
-  /usr/share/javadoc/gnome/resources/gjdoc.js
-  /usr/share/javadoc/gnome/resources/gjdochtml-clean-color1.css
-  /usr/share/javadoc/gnome/resources/gjdochtml-clean-layout.css
-  /usr/share/javadoc/gnome/resources/inherit.png
-  /usr/share/javadoc/gnome/resources/xhtml11-target10.dtd
-  /usr/share/javadoc/gnome/serialized-form.html
+  /usr/share/javadoc/gnome40/about.html
+  /usr/share/javadoc/gnome40/all-classes.html
+  /usr/share/javadoc/gnome40/all-packages.html
+  /usr/share/javadoc/gnome40/deprecated.html
+  /usr/share/javadoc/gnome40/gjdoc.properties
+  /usr/share/javadoc/gnome40/index.html
+  /usr/share/javadoc/gnome40/org/gnome/gdk/Pixbuf.html
+  /usr/share/javadoc/gnome40/org/gnome/gdk/classes.html
+  /usr/share/javadoc/gnome40/org/gnome/gdk/package-summary.html
+  /usr/share/javadoc/gnome40/org/gnome/glade/Glade.html
+  /usr/share/javadoc/gnome40/org/gnome/glade/Xml.html
+  /usr/share/javadoc/gnome40/org/gnome/glade/classes.html
+  /usr/share/javadoc/gnome40/org/gnome/glade/package-summary.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Boxed.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Glib.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Object.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Plumbing.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Signal.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/Value.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/classes.html
+  /usr/share/javadoc/gnome40/org/gnome/glib/package-summary.html
+  /usr/share/javadoc/gnome40/org/gnome/gnome/Entry.html
+  /usr/share/javadoc/gnome40/org/gnome/gnome/classes.html
+  /usr/share/javadoc/gnome40/org/gnome/gnome/package-summary.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Bin.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Box.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Button.CLICKED.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Button.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Container.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/FileChooser.SELECTION_CHANGED.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/FileChooser.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/FileChooserAction.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/FileChooserButton.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Fixed.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Gtk.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/HBox.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Label.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Misc.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Object.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/ReliefStyle.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/TreeIter.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/VBox.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Widget.ENTER_NOTIFY_EVENT.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Widget.FOCUS_OUT_EVENT.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Widget.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Window.DELETE.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/Window.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/WindowType.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/classes.html
+  /usr/share/javadoc/gnome40/org/gnome/gtk/package-summary.html
+  /usr/share/javadoc/gnome40/overview-summary.html
+  /usr/share/javadoc/gnome40/package-list
+  /usr/share/javadoc/gnome40/resources/gjdoc.js
+  /usr/share/javadoc/gnome40/resources/gjdochtml-clean-color1.css
+  /usr/share/javadoc/gnome40/resources/gjdochtml-clean-layout.css
+  /usr/share/javadoc/gnome40/resources/inherit.png
+  /usr/share/javadoc/gnome40/resources/xhtml11-target10.dtd
+  /usr/share/javadoc/gnome40/serialized-form.html
 
 ------------------
 

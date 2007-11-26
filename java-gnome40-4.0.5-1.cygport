@@ -1,0 +1,39 @@
+ORIG_PN=java-gnome
+inherit gnome.org java
+
+HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	sed -e "s#@JAVA@#${JAVA}#g" \
+		-e "s#@JAVAC@#${JAVAC}#g" \
+		-e "s#@JAVADOC@#${JAVADOC}#g" \
+		-e "s#@JAVAH@#${JAVAH}#g" \
+		-e "s#@JAVA_DIR@#${JAVA_DIR}#g" \
+		-e "s#@JAR@#${JAR}#g" \
+		-e "s#@CFLAGS@#${CFLAGS}#g" \
+		-e "s#@GCJFLAGS@#${GCJFLAGS}#g" \
+		-e "s#@PV@#${PV}#g" \
+		${C}/config > .config
+	cygmake -j1 all doc
+}
+
+src_test() {
+	cd ${B}
+	cygmake -j1 demo
+}
+
+src_install() {
+	cd ${B}
+	cyginstall -j1
+
+	dolib libgtkjava-${PV_MAJ_MIN}.dll.a
+	dojavadoc doc/api
+
+	dodir /usr/bin/
+	mv ${D}/usr/lib/*.dll ${D}/usr/bin
+
+	# FIXME: alternatives
+	rm -f ${D}${JAVA_DIR}/gtk.jar
+}

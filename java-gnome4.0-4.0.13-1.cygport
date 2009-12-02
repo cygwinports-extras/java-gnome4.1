@@ -1,0 +1,57 @@
+ORIG_PN="java-gnome"
+inherit gnome.org java
+
+HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
+
+PATCH_URI="4.0.13-cygdll.patch
+           4.0.13-snapshots.patch"
+
+MAKEOPTS+=" -j1"
+
+myconfigure() {
+	cat > .config <<_EOF
+OS=cygwin
+JUNIT_JARS=${JAVA_DIR}/junit.jar
+JAVAC=${JAVAC} -nowarn -source 1.5 -target 1.5
+JAVAC_CMD=JAVAC
+JAVAH=${JAVAH} -jni
+JAVAH_CMD=JAVAH
+JAR=${JAR}
+JAR_CMD=JAR
+JAVADOC=${JAVADOC}
+JAVADOC_CMD=JAVADOC
+JAVA=${JAVA}
+JAVA_CMD=JAVA
+CC=${CC} -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast
+CC_CMD=GCC
+LINK=${CC} -shared
+LINK_CMD=LINK
+PREFIX=/usr
+LIBDIR=/usr/bin
+JARDIR=${JAVA_DIR}
+APIVERSION=${PV_MAJ_MIN}
+VERSION=${PV}
+_EOF
+
+	echo "/usr/bin" > .libdir
+}
+
+src_compile() {
+	lndirs
+	cd ${B}
+	myconfigure
+	# use Xvfb for sane snapshots
+	export DISPLAY=:40
+	cygmake all doc
+}
+
+src_test() {
+	cd ${B}
+	cygmake demo
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	dojavadoc doc/api
+}

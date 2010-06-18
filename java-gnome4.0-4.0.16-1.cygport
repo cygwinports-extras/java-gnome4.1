@@ -1,0 +1,29 @@
+ORIG_PN="java-gnome"
+inherit gnome.org java
+
+HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
+
+PATCH_URI="4.0.16-equivalence.patch
+           4.0.13-snapshots.patch"
+
+MAKEOPTS+=" -j1"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr --jardir=${JAVA_DIR}
+	# use Xvfb for sane snapshots
+	export DISPLAY=:40
+	cygmake all doc
+}
+
+src_test() {
+	cd ${B}
+	cygmake demo
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	dojavadoc doc/api
+}

@@ -17,7 +17,7 @@ just a window (e.g. with multiwindow running).
  
                  System.out.println("EXEC\tgnome-settings-daemon");
 -                settingsDaemon = r.exec("/usr/libexec/gnome-settings-daemon --display=" + DISPLAY
-+                settingsDaemon = r.exec("/usr/lib/gnome-settings-daemon-2.0/gnome-settings-daemon --display=" + DISPLAY
++                settingsDaemon = r.exec("/usr/bin/gnome-settings-daemon --display=" + DISPLAY
                          + " --disable-crash-dialog");
                  Thread.sleep(100);
                  checkAlive(settingsDaemon, "gnome-settings-daemon");

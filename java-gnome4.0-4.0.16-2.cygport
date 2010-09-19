@@ -4,6 +4,7 @@ inherit gnome.org java
 HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
 
 PATCH_URI="4.0.16-equivalence.patch
+           4.0.16-null-cursor.patch
            4.0.13-snapshots.patch"
 
 MAKEOPTS+=" -j1"

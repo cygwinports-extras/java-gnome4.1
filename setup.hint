@@ -1,5 +1,5 @@
 category: Gnome Java
-requires: libatk1.0_0 libcairo2 libenchant1 libgcc1 libgdk_pixbuf2.0_0 libglade2.0_0 libglib2.0_0 libgtk2.0_0 libgtksourceview2.0_0 libgtkspell0 libintl8 libnotify1 libpango1.0_0 libunique1.0_0 libX11_6 libXext6
+requires: libatk1.0_0 libcairo2 libenchant1 libgdk_pixbuf2.0_0 libglade2.0_0 libglib2.0_0 libgtk2.0_0 libgtksourceview2.0_0 libgtkspell0 libintl8 libnotify1 libpango1.0_0 libunique1.0_0 libX11_6 libXext6
 sdesc: "Java GTK+ bindings"
 ldesc: "This is the java-gnome language bindings project. We endeavour 
 to provide a high quality library you can use to write GTK and GNOME 

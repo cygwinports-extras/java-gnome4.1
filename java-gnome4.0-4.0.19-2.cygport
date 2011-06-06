@@ -3,7 +3,11 @@ inherit gnome.org java
 
 HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
 
-PATCH_URI="4.0.13-snapshots.patch"
+PATCH_URI="
+	4.0.13-snapshots.patch
+	4.0.19-libnotify-0.7.patch
+	4.0.19-javadoc.patch
+"
 
 MAKEOPTS+=" -j1"
 

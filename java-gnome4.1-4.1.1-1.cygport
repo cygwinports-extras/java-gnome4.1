@@ -1,12 +1,10 @@
 ORIG_PN="java-gnome"
 inherit gnome.org java
 
-HOMEPAGE="http://java-gnome.sourceforge.net/4.0/"
+HOMEPAGE="http://java-gnome.sourceforge.net/"
 
 PATCH_URI="
 	4.0.13-snapshots.patch
-	4.0.20-libnotify07.patch
-	4.0.19-javadoc.patch
 "
 
 MAKEOPTS+=" -j1"
@@ -29,4 +27,6 @@ src_install() {
 	cd ${B}
 	cyginstall
 	dojavadoc doc/api
+	# allow parallel install with 4.0
+	rm ${D}${JAVA_DIR}/gtk.jar
 }

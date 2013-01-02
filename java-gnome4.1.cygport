@@ -1,10 +1,21 @@
 ORIG_PN="java-gnome"
 inherit gnome.org java
 
+NAME="java-gnome4.1"
+VERSION=4.1.2
+RELEASE=1
+CATEGORY="Java"
+SUMMARY="Java GTK+3 bindings"
+DESCRIPTION="This is the java-gnome language bindings project. We endeavour
+to provide a high quality library you can use to write GTK and GNOME programs.
+The underlying APIs are elegantly transformed into Java and carefully
+documented so that anyone new to Linux or Open Source can rapidly be on their
+way to creating fabulous applications."
 HOMEPAGE="http://java-gnome.sourceforge.net/"
 
 PATCH_URI="
 	4.0.13-snapshots.patch
+	4.1.2-libunique.patch
 "
 
 MAKEOPTS+=" -j1"

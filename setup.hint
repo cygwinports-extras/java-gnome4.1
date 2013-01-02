@@ -1,8 +1,0 @@
-category: Gnome Java
-requires: libatk1.0_0 libcairo2 libenchant1 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk3_0 libgtksourceview3.0_0 libintl8 libnotify4 libpango1.0_0 librsvg2_2 libunique3.0_0 libX11_6 libXext6
-sdesc: "Java GTK+3 bindings"
-ldesc: "This is the java-gnome language bindings project. We endeavour 
-to provide a high quality library you can use to write GTK and GNOME 
-programs. The underlying APIs are elegantly transformed into Java and 
-carefully documented so that anyone new to Linux or Open Source can 
-rapidly be on their way to creating fabulous applications."

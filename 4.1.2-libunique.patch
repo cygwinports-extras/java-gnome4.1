@@ -1,0 +1,11 @@
+--- origsrc/java-gnome-4.1.2/build/faster	2012-08-29 22:44:57.000000000 -0500
++++ src/java-gnome-4.1.2/build/faster	2013-01-01 18:03:59.107649100 -0600
+@@ -63,7 +63,7 @@ versionFile = "src/bindings/org/freedesk
+ hashFile = "tmp/.hashes"
+ lockFile = "tmp/.build"
+ 
+-GNOME_MODULES = "gthread-2.0 glib-2.0 gtk+-3.0 gtk+-unix-print-3.0 gtksourceview-3.0 libnotify enchant librsvg-2.0"
++GNOME_MODULES = "gthread-2.0 glib-2.0 gtk+-3.0 gtk+-unix-print-3.0 gtksourceview-3.0 libnotify enchant librsvg-2.0 unique-3.0"
+ 
+ #
+ # Armour against multiple simultaneous invocations.

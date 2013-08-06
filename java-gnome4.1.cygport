@@ -3,7 +3,7 @@ inherit gnome.org java
 
 NAME="java-gnome4.1"
 VERSION=4.1.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Java"
 SUMMARY="Java GTK+3 bindings"
 DESCRIPTION="This is the java-gnome language bindings project. We endeavour
@@ -15,7 +15,6 @@ HOMEPAGE="http://java-gnome.sourceforge.net/"
 
 PATCH_URI="
 	4.0.13-snapshots.patch
-	4.1.3-python2.patch
 "
 
 PKG_NAMES="${NAME} javadoc-gnome4.1"
